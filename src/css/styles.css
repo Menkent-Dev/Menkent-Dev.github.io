@@ -63,6 +63,13 @@ li {
     bottom: 10px;
 }
 
+.bottom-right-text {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+
 .center-left-text {
     position: fixed;
     transform: translateY(-50%);

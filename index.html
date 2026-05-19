@@ -14,81 +14,27 @@
     <!-- local files -->
     <link href="src/css/styles.css" rel="stylesheet">
 
+
     <title>server&gt;user&gt;m3nk3nt&gt;intro</title>
 </head>
 
 <body>
     <div id="console" style="display:block;"></div>
-    <script>
-        const lines = [
-            { text: "Cascadian Military Terminal V.2.0_35-M | Build 05192026-02a stable", pause_speed: 10 },
-            { text: "Property of the Federal Government of Cascadia", pause_speed: 10 },
-            { text: "" },
-            { text: "[INFO|sys]: Initializing system", pause_speed: 950 },
-            { text: "[INFO|sys]: Loading drivers", pause_speed: 550 },
-            { text: "[INFO|sys]: Loading non-essential modules", pause_speed: 1750 },
-            { text: "[INFO|sys]: OK (System passed basic integrity checks)" },
-
-            { text: "" },
-            { text: "USERNAME: ", pause_speed: 500, newline: false },
-            { text: "menkent", typing_speed: 150, pause_speed: 150, cpt: 1 },
-            { text: "PASSWORD: ", pause_speed: 400, newline: false },
-            { text: "██████████████", typing_speed: 150, pause_speed: 145, cpt: 1 },
-            { text: "" },
-
-            { text: "[INFO|authnet]: Connecting", newline: false },
-            { text: "....", typing_speed: 600, cpt: 1 },
-            { text: "[INFO|authnet]: Verifying", newline: false },
-            { text: ".....", typing_speed: 600, cpt: 1 },
-            { text: "[INFO|authnet]: Authenticating", newline: false },
-            { text: "........", typing_speed: 600, cpt: 1 },
-            { text: "[INFO|authnet]: Authenticated (found a match). Welcome Menkent." },
-            { text: "" },
-            { text: "menkent$ A:/ ", pause_speed: 1000, newline: false},
-            { text: "intro.html", typing_speed: 150, pause_speed: 750, cpt: 1 }
-        ];
-
-        const output = document.getElementById("console");
-
-        function runTerminal(onDone) {
-            let lineIndex = 0;
-            let charIndex = 0;
-
-            function type() {
-                if (lineIndex >= lines.length) {
-                    onDone?.();
-                    return;
-                }
-
-                const { text, newline, typing_speed = 1, pause_speed = 1, cpt = 999 } = lines[lineIndex];
-
-                if (charIndex < text.length) {
-                    output.textContent += text.slice(charIndex, charIndex + cpt);
-                    charIndex += cpt;
-                    setTimeout(type, typing_speed);
-                } else {
-                    if (newline !== false) {
-                        output.textContent += "\n";
-                    }
-                    lineIndex++;
-                    charIndex = 0;
-                    setTimeout(type, pause_speed);
-                }
-
-                output.scrollTop = output.scrollHeight;
+    <script src="src/js/terminal.js"></script>
+    <noscript>
+        <style>
+            #console,
+            #skip-btn {
+                display: none !important;
             }
 
-            type();
-        }
-
-        runTerminal(() => {
-            setTimeout(() => {
-                document.getElementById("console").style.display = "none";
-                document.getElementById("post-console").style.display = "block";
-                document.getElementById("content").style.display = "block";
-            }, 10); // short pause before switching
-        });
-    </script>
+            #post-console,
+            #content {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <button class="bottom-right-text btn btn-dark" id="skip-btn" onclick="skipTerminal()">Skip</button>
     <div id="content" style="display:none;">
         <div id="post-console">
             Viewing loaded content:
@@ -111,9 +57,10 @@
                 <li>And some much more that i prob forgot</li>
             </ul>
         </div>
-        <img src="src/img/icon.png" class="center-right-text" style="image-rendering: pixelated;" width="320" height="320">
-        <div class="bottom-middle-text", style="color: white;">
-            End of HTML file (WIP)
+        <img src="src/img/icon.png" class="center-right-text" style="image-rendering: pixelated;" width="320"
+            height="320">
+        <div class="bottom-middle-text" , style="color: white;">
+            Contact Information: NULL
         </div>
     </div>
 </body>
