@@ -1,0 +1,78 @@
+html,
+body {
+    font-family: 'Noto Sans Mono', monospace;
+    color: #4AD5FF
+}
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+li {
+    font-size: 18px;
+}
+
+[data-bs-theme='dark'] {
+    /* main background color */
+    --bs-body-bg: #1a1a2e;
+    /* same color in RGB (used internally by Bootstrap; just to prevent any funky behavior in background color calcs) */
+    --bs-body-bg-rgb: 26, 26, 46;
+}
+
+/* this one's for the console */
+#console {
+    color: white;
+    font-size: 10px;
+    padding: 16px;
+    width: 600px;
+    height: 600px;
+    overflow-y: auto;
+    border-radius: 6px;
+    white-space: pre-wrap;
+}
+
+#post-console {
+    color: white;
+    font-size: 10px;
+    padding: 16px;
+    width: 250px;
+    height: 100px;
+    overflow-y: auto;
+    border-radius: 6px;
+}
+
+.middle-text {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.top-middle-text {
+    position: fixed;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 10px;
+}
+
+.bottom-middle-text {
+    position: fixed;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 10px;
+}
+
+.center-left-text {
+    position: fixed;
+    transform: translateY(-50%);
+    left: 10px;
+    top: 50%;
+}
+
+.center-right-text {
+    position: fixed;
+    transform: translateY(-50%);
+    right: 10px;
+    top: 50%;
+}

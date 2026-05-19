@@ -2,97 +2,120 @@
 
 <html lang="en" data-bs-theme="dark">
 
-    <head>
-        <!-- fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap"
-              rel="stylesheet">
-        <!-- bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-                crossorigin="anonymous"></script>
-        <!-- local files -->
-        <link href="styles.css" rel="stylesheet">
+<head>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <!-- local files -->
+    <link href="src/css/styles.css" rel="stylesheet">
 
-        <title>E</title>
-    </head>
+    <title>server&gt;user&gt;m3nk3nt&gt;intro</title>
+</head>
 
-    <body>
-        <div id="console"></div>
-        <script>
-            const lines = [
-                { text: "OPENTERMINAL VERSION = v1.14.3 | BUILD = 05162026a", pause_speed: 10 },
-                { text: "[INFO|sys]: Initializing system", pause_speed: 950 },
-                { text: "[INFO|sys]: Loading drivers", pause_speed: 550 },
-                { text: "[INFO|sys]: Loading non-essential modules", pause_speed: 1750 },
-                { text: "[INFO|sys]: OK (System passed basic integrity checks)" },
-                { text: "[INFO|net]: Connecting to server (per post-boot protocol)", newline: false },
-                { text: "....", typing_speed: 600, cpt: 1 },
-                { text: "[INFO|net]: Performing TLS handshake to server", newline: false },
-                { text: "..", typing_speed: 600, cpt: 1 },
-                { text: "[INFO|net]: Establishing connection", newline: false },
-                { text: "...", typing_speed: 600, cpt: 1 },
-                { text: "[INFO|net]: Loading content", newline: false },
-                { text: "..", typing_speed: 600, cpt: 1 }
-            ];
+<body>
+    <div id="console" style="display:none;"></div>
+    <script>
+        const lines = [
+            { text: "Cascadian Military Terminal V.2.0_35-M | Build 05192026-02a stable", pause_speed: 10 },
+            { text: "Property of the Federal Government of Cascadia", pause_speed: 10 },
+            { text: "" },
+            { text: "[INFO|sys]: Initializing system", pause_speed: 950 },
+            { text: "[INFO|sys]: Loading drivers", pause_speed: 550 },
+            { text: "[INFO|sys]: Loading non-essential modules", pause_speed: 1750 },
+            { text: "[INFO|sys]: OK (System passed basic integrity checks)" },
 
-            const output = document.getElementById("console");
+            { text: "" },
+            { text: "USERNAME: ", pause_speed: 500, newline: false },
+            { text: "menkent", typing_speed: 150, pause_speed: 150, cpt: 1 },
+            { text: "PASSWORD: ", pause_speed: 400, newline: false },
+            { text: "██████████████", typing_speed: 150, pause_speed: 145, cpt: 1 },
+            { text: "" },
 
-            function runTerminal(onDone) {
-                let lineIndex = 0;
-                let charIndex = 0;
+            { text: "[INFO|authnet]: Connecting", newline: false },
+            { text: "....", typing_speed: 600, cpt: 1 },
+            { text: "[INFO|authnet]: Verifying", newline: false },
+            { text: ".....", typing_speed: 600, cpt: 1 },
+            { text: "[INFO|authnet]: Authenticating", newline: false },
+            { text: "........", typing_speed: 600, cpt: 1 },
+            { text: "[INFO|authnet]: Authenticated (found a match). Welcome Menkent." },
+            { text: "" },
+            { text: "menkent$ A:/ ", pause_speed: 1000, newline: false},
+            { text: "intro.html", typing_speed: 150, pause_speed: 750, cpt: 1 }
+        ];
 
-                function type() {
-                    if (lineIndex >= lines.length) {
-                        onDone?.();
-                        return;
-                    }
+        const output = document.getElementById("console");
 
-                    const { text, newline, typing_speed = 1, pause_speed = 1, cpt = 999 } = lines[lineIndex];
+        function runTerminal(onDone) {
+            let lineIndex = 0;
+            let charIndex = 0;
 
-                    if (charIndex < text.length) {
-                        output.textContent += text.slice(charIndex, charIndex + cpt);
-                        charIndex += cpt;
-                        setTimeout(type, typing_speed);
-                    } else {
-                        if (newline !== false) {
-                            output.textContent += "\n";
-                        }
-                        lineIndex++;
-                        charIndex = 0;
-                        setTimeout(type, pause_speed);
-                    }
-
-                    output.scrollTop = output.scrollHeight;
+            function type() {
+                if (lineIndex >= lines.length) {
+                    onDone?.();
+                    return;
                 }
 
-                type();
+                const { text, newline, typing_speed = 1, pause_speed = 1, cpt = 999 } = lines[lineIndex];
+
+                if (charIndex < text.length) {
+                    output.textContent += text.slice(charIndex, charIndex + cpt);
+                    charIndex += cpt;
+                    setTimeout(type, typing_speed);
+                } else {
+                    if (newline !== false) {
+                        output.textContent += "\n";
+                    }
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(type, pause_speed);
+                }
+
+                output.scrollTop = output.scrollHeight;
             }
 
-            runTerminal(() => {
-                setTimeout(() => {
-                    document.getElementById("console").style.display = "none";
-                    document.getElementById("post-console").style.display = "block";
-                    document.getElementById("content").style.display = "block";
-                }, 10); // short pause before switching
-            });
-        </script>
-        <div id="content" style="display:none;">
-            <div id="post-console">
-                Connected to server [███.███.███.███]
-                <br>
-                Viewing loaded content:
-            </div>
-            <div class="top-center-text" style="color: white;">Intro</div>
-            <div class="center-text" style="transform: translate(-50%, -350%); z-index: 10;">
-                <h1>Hello Guys!</h1>
-            </div>
-            <div class="bottom-center-text">
-                <a href="hobbies.html">Hobbies</a>
-                <a href="hobbies.html">Hobbies</a>
-            </div>
+            type();
+        }
+
+        runTerminal(() => {
+            setTimeout(() => {
+                document.getElementById("console").style.display = "none";
+                document.getElementById("post-console").style.display = "block";
+                document.getElementById("content").style.display = "block";
+            }, 10); // short pause before switching
+        });
+    </script>
+    <div id="content" style="display:block;">
+        <div id="post-console">
+            Viewing loaded content:
         </div>
-    </body>
+        <div class="top-middle-text" style="color: white;">Intro</div>
+        <div class="middle-text" style="transform: translate(-50%, -400%); z-index: 10;">
+            <h1><b>Hello Guys!</b></h1>
+        </div>
+        <br>
+        <br>
+        <div class="center-left-text">
+            <p>I'm Menkent_DEV (Although in some sites, i'm either M3nk3nt, or Menkent)</p>
+            <br>
+            <p>Some facts about me:</p>
+            <ul>
+                <li>I&#39;m a neurodivergent nerd</li>
+                <li>I primarily code in JAVA and C++ (although I do other languages, for fun).</li>
+                <li>I do Minecraft Modding (has a WIP mod)</li>
+                <li>I do pixel art</li>
+                <li>And some much more that i prob forgot</li>
+            </ul>
+        </div>
+        <img src="src/img/icon.png" class="center-right-text" style="image-rendering: pixelated;" width="320" height="320">
+        <div class="bottom-middle-text", style="color: white;">
+            End of HTML file (WIP)
+        </div>
+    </div>
+</body>
 
 </html>
