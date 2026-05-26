@@ -1,16 +1,17 @@
 html,
 body {
     font-family: 'Noto Sans Mono', monospace;
-    color: #4AD5FF
+    color: #ffffff
+}
+
+p,
+li {
+    font-size: 8px;
 }
 
 a {
     text-decoration: none;
-    font-size: 18px;
-}
-
-li {
-    font-size: 18px;
+    font-size: 10px;
 }
 
 [data-bs-theme='dark'] {
@@ -68,7 +69,6 @@ li {
     right: 10px;
     bottom: 10px;
 }
-
 
 .center-left-text {
     position: fixed;
