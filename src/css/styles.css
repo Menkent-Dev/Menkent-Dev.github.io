@@ -6,12 +6,12 @@ body {
 
 p,
 li {
-    font-size: 8px;
+    font-size: 18px;
 }
 
 a {
     text-decoration: none;
-    font-size: 10px;
+    font-size: 18px;
 }
 
 [data-bs-theme='dark'] {
