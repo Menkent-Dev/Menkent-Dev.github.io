@@ -17,7 +17,7 @@ a {
 [data-bs-theme='dark'] {
     /* main background color */
     --bs-body-bg: #1a1a2e;
-    /* same color in RGB (used internally by Bootstrap; just to prevent any funky behavior in background color calcs) */
+    /* same color in RGB (used internally by Bootstrap; just to prevent any funky behavior in background color calculation) */
     --bs-body-bg-rgb: 26, 26, 46;
 }
 

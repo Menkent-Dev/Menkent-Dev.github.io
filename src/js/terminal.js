@@ -1,6 +1,6 @@
 
 const lines = [
-    { text: "Cascadian Military Terminal V.2.0_35-M | Build 05192026-02a stable", pause_speed: 10 },
+    { text: "Cascadian Military Terminal V.2.4_01-M | Build 10182026-01a stable", pause_speed: 10 },
     { text: "Property of the Federal Government of Cascadia", pause_speed: 10 },
     { text: "" },
     { text: "[INFO|sys]: Initializing system", pause_speed: 950 },

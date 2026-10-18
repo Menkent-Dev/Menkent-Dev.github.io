@@ -1,0 +1,33 @@
+BEGIN DIAGNOSTICS
+--------------
+[STATUS]:
+    system_core:         LIMITED
+    networking:          COMPROMISED
+    vm:                  ONLINE
+    life_support:        COMPROMISED
+--------------
+[NET STATUS]:
+    port 1 (sys_ipc):    ONLINE
+    port 2 (ping):       ONLINE
+    port 3 (network):    LIMITED
+    port 4 (auth):       ONLINE
+    port 5 (ide):        ONLINE
+    port 6 (main_chat):  NOT_RESPONDING
+    port 7 (directmsg):  LIMITED
+    port 8 (unused):     UNUSED
+    port 9 (unused):     UNUSED
+    port 10 (unused):    UNUSED
+    port 11 (aux1):      ONLINE
+    port 12 (aux2):      ONLINE
+    port 13 (aux3):      ONLINE
+    port 16 (gen_info):  ONLINE
+    port 17 (misc_info): ONLINE
+    port 18 (ed_info):   LIMITED
+--------------
+[NOTE]:
+    This is NOT an ARG. There are no puzzles to solve,
+    and the only stuff here is my irl situation disguised
+    as system diagnostics. 
+
+    - Menkent
+--------------
